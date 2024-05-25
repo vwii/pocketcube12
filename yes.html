@@ -49,10 +49,28 @@
             color: #f0e6d6;
             text-align: center;
             z-index: 1000;
+            width: 80%;
+            max-width: 800px;
         }
-        video {
+        .dialog-box video {
             width: 100%;
             border-radius: 12px;
+        }
+        .close-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            background-color: #6b8e23;
+            color: #f0e6d6;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .close-button:hover {
+            background-color: #556b2f;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -62,15 +80,22 @@
     <button onclick="openDialog()">Click here!</button>
 
     <div class="dialog-box" id="dialogBox">
-        <video id="videoPlayer" controls autoplay>
+        <video id="videoPlayer" controls>
             <source src="main.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <button class="close-button" onclick="closeDialog()">Close</button>
     </div>
 
     <script>
         function openDialog() {
             document.getElementById('dialogBox').style.display = 'block';
+            document.getElementById('videoPlayer').play();
+        }
+
+        function closeDialog() {
+            document.getElementById('dialogBox').style.display = 'none';
+            document.getElementById('videoPlayer').pause();
         }
     </script>
 </body>
