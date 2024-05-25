@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Pocketcube12</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #2c2c2c;
+            color: #f0e6d6;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            background-color: #6b8e23;
+            color: #f0e6d6;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #556b2f;
+            transform: scale(1.05);
+        }
+        .dialog-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #444;
+            border: 2px solid #6b8e23;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #f0e6d6;
+            text-align: center;
+            z-index: 1000;
+        }
+        video {
+            width: 100%;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Pocketcube12!</h1>
+    <p>You have successfully identified yourself as Pocketcube12! >u<</p>
+    <button onclick="openDialog()">Click here!</button>
+
+    <div class="dialog-box" id="dialogBox">
+        <video id="videoPlayer" controls autoplay>
+            <source src="main.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function openDialog() {
+            document.getElementById('dialogBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
